@@ -1,4 +1,4 @@
-<android.support.v4.app.FragmentTabHost
+<FragmentTabHost
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@android:id/tabhost"
     android:layout_width="match_parent"
@@ -11,7 +11,6 @@
 
     <TabWidget
         android:id="@android:id/tabs"
-
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,4 +29,4 @@
         android:layout_weight="1"/>
 
 </LinearLayout>
-</android.support.v4.app.FragmentTabHost>
+</FragmentTabHost>
