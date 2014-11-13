@@ -11,7 +11,7 @@
         <!-- use UTF-8 for everything -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <android.sdk.path>D:\Users\00940831503\Downloads\android-sdk-windows</android.sdk.path>
+        <android.sdk.path>/home/kleber/android-sdk-linux/</android.sdk.path>
     </properties>
 
     <dependencies>
@@ -22,10 +22,11 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-          	<groupId>com.google.android</groupId>
-          	<artifactId>support-v4</artifactId>
-          	<version>r7</version>
-            <scope>provided</scope>
+           <groupId>com.google.android</groupId>
+           <artifactId>support-v4</artifactId>
+           <version>20.0.0</version>
+           <scope>system</scope>
+           <systemPath>/home/kleber/android-sdk-linux/extras/android/support/v4/android-support-v4.jar</systemPath>
         </dependency>
     </dependencies>
 
@@ -53,7 +54,7 @@
                     <target>1.7</target>
                     <showDeprecation>true</showDeprecation>
                     <showWarnings>true</showWarnings>
-                    <executable>D:\Users\00940831503\Downloads\openjdk-1.7.0\bin\javac</executable>
+                    <executable>/home/kleber/jdk1.7.0_55/bin/javac</executable>
                     <fork>true</fork>
                 </configuration>
             </plugin>

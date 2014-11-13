@@ -9,11 +9,8 @@ import android.view.ViewGroup;
 public class Tab1Fragment extends Fragment  {
 
  @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-        Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View V = inflater.inflate(R.layout.tab1_view, container, false);
-
         return V;
     }
 }
