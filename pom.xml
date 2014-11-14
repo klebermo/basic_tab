@@ -21,13 +21,6 @@
             <version>4.1.1.4</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-           <groupId>com.google.android</groupId>
-           <artifactId>support-v4</artifactId>
-           <version>20.0.0</version>
-           <scope>system</scope>
-           <systemPath>/home/kleber/android-sdk-linux/extras/android/support/v4/android-support-v4.jar</systemPath>
-        </dependency>
     </dependencies>
 
     <build>

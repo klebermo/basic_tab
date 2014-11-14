@@ -1,23 +1,75 @@
 package org.hello;
 
+import android.app.ActionBar;
+import android.app.Fragment;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTabHost;
+import android.app.Activity;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.MenuInflater;
 
-public class MainActivity extends FragmentActivity {
-    // Fragment TabHost as mTabHost
-    private FragmentTabHost mTabHost;
+public class MainActivity extends Activity {
+
+    ActionBar.Tab Tab1, Tab2, Tab3;
+
+    Fragment fragmentTab1 = new Tab1Fragment();
+    Fragment fragmentTab2 = new Tab2Fragment();
+    Fragment fragmentTab3 = new Tab3Fragment();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mTabHost = (FragmentTabHost)findViewById(android.R.id.tabhost);
-        mTabHost.setup(this, getSupportFragmentManager(), R.id.realtabcontent);
+        ActionBar actionBar = getActionBar();
 
-        mTabHost.addTab(mTabHost.newTabSpec("tab1").setIndicator("Tab1"), Tab1Fragment.class, null);
-        mTabHost.addTab(mTabHost.newTabSpec("tab2").setIndicator("Tab2"), Tab2Fragment.class, null);
-        mTabHost.addTab(mTabHost.newTabSpec("tab3").setIndicator("Tab3"), Tab3Fragment.class, null);
+        // Create Actionbar Tabs
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+
+        // Set Tab Icon and Titles
+        Tab1 = actionBar.newTab().setText("Tab1");
+        Tab2 = actionBar.newTab().setText("Tab2");
+        Tab3 = actionBar.newTab().setText("Tab3");
+
+        // Set Tab Listeners
+        Tab1.setTabListener(new TabListener(fragmentTab1));
+        Tab2.setTabListener(new TabListener(fragmentTab2));
+        Tab3.setTabListener(new TabListener(fragmentTab3));
+
+        // Add tabs to actionbar
+        actionBar.addTab(Tab1);
+        actionBar.addTab(Tab2);
+        actionBar.addTab(Tab3);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle presses on the action bar items
+        switch (item.getItemId()) {
+            case R.id.action_search:
+                openSearch();
+                return true;
+            case R.id.action_settings:
+                openSettings();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    public void openSearch() {
+      //
+    }
+
+    public void openSettings() {
+      //
+    }
+
 }
